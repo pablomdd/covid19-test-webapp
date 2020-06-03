@@ -26,6 +26,7 @@ export class UserForm extends Component {
     rash: 0,
     vomiting: 0,
     diarrehea: 0,
+    symptoms: {}
   };
 
   nextStep = () => {
@@ -41,7 +42,7 @@ export class UserForm extends Component {
     });
   };
 
-  // Handle fields chand
+  // Handle fields change
 
   handleChange = (input) => (e) => {
     this.setState({ [input]: e.target.value });
@@ -76,6 +77,7 @@ export class UserForm extends Component {
       rash,
       vomiting,
       diarrehea,
+      symptoms
     } = this.state;
 
     const values = {
@@ -100,6 +102,7 @@ export class UserForm extends Component {
       rash,
       vomiting,
       diarrehea,
+      symptoms
     };
 
     switch (step) {
