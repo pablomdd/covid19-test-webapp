@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import Navbar, { AppBar } from "material-ui/AppBar";
-import {List, ListItem} from "material-ui/List";
+import { List, ListItem } from "material-ui/List";
 import RaisedButton from "material-ui/RaisedButton";
 export class FormUserDetails extends Component {
   continue = (e) => {
@@ -14,14 +14,16 @@ export class FormUserDetails extends Component {
     this.props.prevStep();
   };
   render() {
-    // const { values: { firstName, lastName, email, occupation, city, bio } } = this.props;
+    const {
+      values: { firstName, lastName, email, occupation, city, symptoms },
+    } = this.props;
 
     return (
       <MuiThemeProvider>
         <>
           <Navbar title="Confirm your answers" />
-          <h1>Thank You For Your Submition</h1>
-          <p>You will get an email with further information</p>
+          <h1>Thank You For Your Submition {firstName}</h1>
+          <p>You will get an email in {email} with further information</p>
         </>
       </MuiThemeProvider>
     );

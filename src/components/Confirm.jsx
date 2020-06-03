@@ -14,7 +14,10 @@ export class FormUserDetails extends Component {
     this.props.prevStep();
   };
   render() {
-    const { values: { firstName, lastName, email, occupation, city, bio } } = this.props;
+    const { values: { firstName, lastName, email, occupation, city, bio, symptoms, fever, chestPain } } = this.props;
+
+    console.log(fever)
+    console.log(chestPain)
 
     return (
       <MuiThemeProvider>
@@ -30,8 +33,8 @@ export class FormUserDetails extends Component {
                 secondaryText={lastName}
               />
               <ListItem
-                primaryText="First Name"
-                secondaryText={firstName}
+                primaryText="Email"
+                secondaryText={email}
               />
           </List>
           <RaisedButton
