@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/covid19-test-webapp/static/css/main.2f2d2786.chunk.css",
+    "main.js": "/covid19-test-webapp/static/js/main.e8629eea.chunk.js",
+    "main.js.map": "/covid19-test-webapp/static/js/main.e8629eea.chunk.js.map",
+    "runtime-main.js": "/covid19-test-webapp/static/js/runtime-main.bd4cbdf2.js",
+    "runtime-main.js.map": "/covid19-test-webapp/static/js/runtime-main.bd4cbdf2.js.map",
+    "static/js/2.3921a755.chunk.js": "/covid19-test-webapp/static/js/2.3921a755.chunk.js",
+    "static/js/2.3921a755.chunk.js.map": "/covid19-test-webapp/static/js/2.3921a755.chunk.js.map",
+    "index.html": "/covid19-test-webapp/index.html",
+    "precache-manifest.3671bc6acc9d9da6e9bc3780c8a71582.js": "/covid19-test-webapp/precache-manifest.3671bc6acc9d9da6e9bc3780c8a71582.js",
+    "service-worker.js": "/covid19-test-webapp/service-worker.js",
+    "static/css/main.2f2d2786.chunk.css.map": "/covid19-test-webapp/static/css/main.2f2d2786.chunk.css.map",
+    "static/js/2.3921a755.chunk.js.LICENSE.txt": "/covid19-test-webapp/static/js/2.3921a755.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bd4cbdf2.js",
+    "static/js/2.3921a755.chunk.js",
+    "static/css/main.2f2d2786.chunk.css",
+    "static/js/main.e8629eea.chunk.js"
+  ]
+}
