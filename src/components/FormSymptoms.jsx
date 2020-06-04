@@ -3,7 +3,6 @@ import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import Navbar, { AppBar } from "material-ui/AppBar";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
-import TextField from "material-ui/TextField";
 import RaisedButton from "material-ui/RaisedButton";
 
 import { makeStyles } from "@material-ui/core/styles";
@@ -38,7 +37,7 @@ export class FormSymptoms extends Component {
 
     const sliderChange = (sypmtom) => (e) => {
       let val = e.target.ariaValueNow === null ? 0 : e.target.ariaValueNow;
-      console.log(val);
+    //   console.log(val);
       handleSliderChange(sypmtom, val);
     };
 

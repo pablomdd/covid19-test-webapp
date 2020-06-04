@@ -11,6 +11,7 @@ export class UserForm extends Component {
     lastName: "",
     email: "",
     city: "",
+    country: "",
     chestPain: 0,
     breathingDifficulty: 0,
     dryCough: 0,
@@ -26,7 +27,8 @@ export class UserForm extends Component {
     rash: 0,
     vomiting: 0,
     diarrehea: 0,
-    symptoms: {}
+    symptoms: {},
+    testResult: false,
   };
 
   nextStep = () => {
@@ -61,7 +63,7 @@ export class UserForm extends Component {
       email,
       occupation,
       city,
-      bio,
+      country,
       chestPain,
       breathingDifficulty,
       dryCough,
@@ -86,7 +88,7 @@ export class UserForm extends Component {
       email,
       occupation,
       city,
-      bio,
+      country,
       chestPain,
       breathingDifficulty,
       dryCough,

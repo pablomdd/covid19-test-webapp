@@ -34,10 +34,10 @@ export class FormUserDetails extends Component {
           />
           <br />
           <TextField
-            hintText="Enter your Bio"
-            floatingLabelText="Bio"
-            onChange={handleChange("bio")}
-            defaultValue={values.bio}
+            hintText="Enter your Country"
+            floatingLabelText="Country"
+            onChange={handleChange("country")}
+            defaultValue={values.country}
           />
           <br />
           <RaisedButton
