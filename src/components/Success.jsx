@@ -9,6 +9,8 @@ import Card from "@material-ui/core/Card";
 import Button from "@material-ui/core/Button";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
+
+import TestResult from "../services/TestResult";
 export class FormUserDetails extends Component {
   continue = (e) => {
     e.preventDefault();
@@ -21,8 +23,53 @@ export class FormUserDetails extends Component {
   };
   render() {
     const {
-      values: { firstName, lastName, email, occupation, city, fever },
+      values: {
+        firstName,
+        lastName,
+        email,
+        occupation,
+        city,
+        country,
+        chestPain,
+        breathingDifficulty,
+        dryCough,
+        fever,
+        tiredness,
+        blueLips,
+        recentoss,
+        muscleAches,
+        soreThroat,
+        noseCongestion,
+        headache,
+        chills,
+        rash,
+        vomiting,
+        diarrehea,
+        symptoms },
     } = this.props;
+
+    const selectedSypmtoms = {
+      chestPain,
+      breathingDifficulty,
+      dryCough,
+      fever,
+      tiredness,
+      blueLips,
+      recentoss,
+      muscleAches,
+      soreThroat,
+      noseCongestion,
+      headache,
+      chills,
+      rash,
+      vomiting,
+      diarrehea,
+    };
+
+    const result = TestResult(selectedSypmtoms);
+    console.log(`result: ${result}`);
+
+    // console.log(selectedSypmtoms);
 
     const styles = {
       height: "100vh",
@@ -73,9 +120,9 @@ export class FormUserDetails extends Component {
               >
                 <Grid item md={12}>
                   <Typography variant="h3" gutterBottom>
-                    You tested {fever >= 4 ? "Positive" : "Negative"}
+                    You tested {TestResult(selectedSypmtoms) >= 0 ? "Positive" : "Negative"}
                   </Typography>
-                  {fever >= 4 ? (
+                  {TestResult(selectedSypmtoms) >= 0 ? (
                     <Card className={styles.root}>
                       <CardContent>
                         <Typography

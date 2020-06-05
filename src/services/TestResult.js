@@ -1,5 +1,9 @@
 import * as tf from "@tensorflow/tfjs";
 
+function makePattern(symptoms){
+
+}
+
 function TestResult(testPattern) {
   // Contants Init obtained from training (EXTERNAL)
   // W1 = 15x2
@@ -167,10 +171,11 @@ function TestResult(testPattern) {
       a1.add(b1);
       a1.logSigmoid();
     }
-    a2 = tf.add(tf.matMul(W2, a1), b2).print();
-    return a2;
+    a2 = tf.add(tf.matMul(W2, a1), b2);
+    return a2.asScalar().dataSync()[0];
   };
 
+  console.log(testPattern);
   return test(t2);
 }
 

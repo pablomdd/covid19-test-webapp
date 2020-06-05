@@ -4,11 +4,9 @@ import FormPersonalDetails from "./FormPersonalDetails";
 import Confirm from "./Confirm";
 import Success from "./Success";
 import FormSymptoms from "./FormSymptoms";
-
-import TestResult from "../services/TestResult";
 export class UserForm extends Component {
   state = {
-    step: 1,
+    step: 5,
     firsName: "",
     lastName: "",
     email: "",
@@ -57,8 +55,11 @@ export class UserForm extends Component {
     this.setState({ [input]: e });
   };
 
+  handleSypmtomsChange = (sypmtoms) => {
+    this.setState({sypmtoms});
+  }
+
   render() {
-    console.log(TestResult());
     const { step } = this.state;
     const {
       firstName,
@@ -142,6 +143,7 @@ export class UserForm extends Component {
           <Confirm
             prevStep={this.prevStep}
             nextStep={this.nextStep}
+            handleSymptomsChange={this.handleSypmtomsChange}
             values={values}
           />
         );
