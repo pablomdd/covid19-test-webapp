@@ -188,7 +188,7 @@ export class FormUserDetails extends Component {
                     Be aware this is not decisive data.
                   </Typography>
                   <Typography variant="caption" display="block" gutterBottom>
-                    This preview version tests postive for FEVER >= 4.
+                    This preview version is still in development.
                   </Typography>
                 </Grid>
               </Grid>

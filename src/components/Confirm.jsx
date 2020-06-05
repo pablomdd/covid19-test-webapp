@@ -41,15 +41,15 @@ export class FormUserDetails extends Component {
         rash,
         vomiting,
         diarrehea,
-        symptoms
+        symptoms,
       },
     } = this.props;
-    
+
     return (
       <MuiThemeProvider>
         <>
           <Navbar title="Confirm your answers" />
-          <Container maxWidth="sm">
+          <Container maxWidth="sm" styles={styles}>
             <Grid container spacing={3}>
               <Grid item xs={12}>
                 <h2>Personal Info</h2>
@@ -75,7 +75,7 @@ export class FormUserDetails extends Component {
               <Grid item xs={12}>
                 <h2>Symptoms you selected</h2>
               </Grid>
-              <Grid item md={6}>
+              <Grid item xs={12} md={6}>
                 <List>
                   <ListItem
                     primaryText="Chest Pain"
@@ -98,24 +98,29 @@ export class FormUserDetails extends Component {
                   />
                 </List>
               </Grid>
-              <Grid item md={6}>
-                <ListItem
-                  primaryText="Muscle aches"
-                  secondaryText={muscleAches}
-                />
-                <ListItem primaryText="Sore troat" secondaryText={soreThroat} />
-                <ListItem
-                  primaryText="Coggestion or running nose"
-                  secondaryText={noseCongestion}
-                />
-                <ListItem primaryText="Head Ache" secondaryText={headache} />
-                <ListItem primaryText="Chills" secondaryText={chills} />
-                <ListItem primaryText="Rash" secondaryText={rash} />
-                <ListItem
-                  primaryText="Nausea or Vomitting"
-                  secondaryText={vomiting}
-                />
-                <ListItem primaryText="Diarrehea" secondaryText={diarrehea} />
+              <Grid item xs={12} md={6}>
+                <List>
+                  <ListItem
+                    primaryText="Muscle aches"
+                    secondaryText={muscleAches}
+                  />
+                  <ListItem
+                    primaryText="Sore troat"
+                    secondaryText={soreThroat}
+                  />
+                  <ListItem
+                    primaryText="Coggestion or running nose"
+                    secondaryText={noseCongestion}
+                  />
+                  <ListItem primaryText="Head Ache" secondaryText={headache} />
+                  <ListItem primaryText="Chills" secondaryText={chills} />
+                  <ListItem primaryText="Rash" secondaryText={rash} />
+                  <ListItem
+                    primaryText="Nausea or Vomitting"
+                    secondaryText={vomiting}
+                  />
+                  <ListItem primaryText="Diarrehea" secondaryText={diarrehea} />
+                </List>
               </Grid>
             </Grid>
             <RaisedButton
@@ -138,6 +143,7 @@ export class FormUserDetails extends Component {
 }
 
 const styles = {
+  color: "white",
   button: {
     margin: 15,
   },
