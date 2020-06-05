@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import createHistory from 'history/createBrowserHistory';
+import createHistory from "history/createBrowserHistory";
 
 import Particles from "react-particles-js";
 import {
@@ -8,7 +8,7 @@ import {
   makeStyles,
   createMuiTheme,
 } from "@material-ui/core/styles";
-import { UserForm } from "./components/UserForm";
+import UserForm from "./components/UserForm";
 import Home from "./components/Home";
 import Footer from "./components/Footer";
 import "./App.css";
@@ -89,11 +89,11 @@ function App() {
           >
             <Router basename={process.env.PUBLIC_URL}>
               <Switch>
-                <Route exact path={'/'} component={UserForm} />
                 <Footer>
-                  <Route exact path={'/test'} component={UserForm} />
+                  <Route exact path={"/"} component={UserForm} />
+                  <Route exact path={"/test"} component={UserForm} />
                 </Footer>
-                  <Route component={() => (<div>404 Not found </div>)} />
+                <Route component={() => <div>404 Not found </div>} />
               </Switch>
             </Router>
           </div>
