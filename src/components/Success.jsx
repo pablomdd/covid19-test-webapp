@@ -45,7 +45,8 @@ export class FormUserDetails extends Component {
         rash,
         vomiting,
         diarrehea,
-        symptoms },
+        symptoms,
+      },
     } = this.props;
 
     const selectedSypmtoms = {
@@ -66,6 +67,17 @@ export class FormUserDetails extends Component {
       diarrehea,
     };
 
+    const verifySipmtoms = (symptoms) => {
+      let total = Object.values(symptoms).reduce((t, n) => t + n);
+      console.log(total);
+      if (total === 75){
+        return "Positive"
+      }else if ( total === 0){
+        return "Negative"
+      }else{  
+        return `${TestResult(symptoms) >= 0 ? "Positive" : "Negative"}`
+      }
+    };
     const result = TestResult(selectedSypmtoms);
     console.log(`result: ${result}`);
 
@@ -120,7 +132,7 @@ export class FormUserDetails extends Component {
               >
                 <Grid item md={12}>
                   <Typography variant="h3" gutterBottom>
-                    You tested {TestResult(selectedSypmtoms) >= 0 ? "Positive" : "Negative"}
+                    You tested {verifySipmtoms(selectedSypmtoms)}
                   </Typography>
                   {TestResult(selectedSypmtoms) >= 0 ? (
                     <Card className={styles.root}>
@@ -136,8 +148,8 @@ export class FormUserDetails extends Component {
                           </a>
                         </Typography>
                         <Typography variant="h5" component="h2">
-                          Contact 800 00 44 800 
-                          <br/>
+                          Contact 800 00 44 800
+                          <br />
                           for specialed help.
                         </Typography>
                       </CardContent>
