@@ -1,11 +1,18 @@
 import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 import Particles from "react-particles-js";
-import { ThemeProvider, makeStyles, createMuiTheme  } from "@material-ui/core/styles";
+import {
+  ThemeProvider,
+  makeStyles,
+  createMuiTheme,
+} from "@material-ui/core/styles";
 import { UserForm } from "./components/UserForm";
+import Home from "./components/Home";
+import Footer from "./components/Footer";
 import "./App.css";
 
 function App() {
-
   const theme = createMuiTheme({
     typography: {
       // In Chinese and Japanese the characters are usually larger,
@@ -15,15 +22,15 @@ function App() {
     palette: {
       primary: {
         // light: will be calculated from palette.primary.main,
-        main: '#FF7075',
+        main: "#FF7075",
         // dark: will be calculated from palette.primary.main,
         // contrastText: will be calculated to contrast with palette.primary.main
       },
       secondary: {
-        light: '#0066ff',
-        main: '#0044ff',
+        light: "#0066ff",
+        main: "#0044ff",
         // dark: will be calculated from palette.secondary.main,
-        contrastText: '#ffcc00',
+        contrastText: "#ffcc00",
       },
       // Used by `getContrastText()` to maximize the contrast between
       // the background and the text.
@@ -34,7 +41,7 @@ function App() {
       tonalOffset: 0.2,
     },
   });
-  
+
   return (
     <div className="App">
       <ThemeProvider theme={theme}>
@@ -76,7 +83,14 @@ function App() {
               height: "100%",
             }}
           >
-            <UserForm />
+            <Router>
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <Footer>
+                  <Route exact path="/test" component={UserForm} />
+                </Footer>
+              </Switch>
+            </Router>
           </div>
         </div>
       </ThemeProvider>
