@@ -57,7 +57,7 @@ const Home = () => {
           {"Quick test for diagnose COVID-19 powered by AI. "}
           {"Get reliable results right away."}
         </Typography>
-        <Link color="inherit" href={process.env.PUBLIC_URL + '/test'}>
+        <Link color="inherit" href="https://pablomdd.github.io/covid19-test-webapp/">
           <Button variant="outlined" color="primary" href="/test">
             Go to test
           </Button>
