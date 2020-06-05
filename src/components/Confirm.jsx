@@ -5,10 +5,12 @@ import { List, ListItem } from "material-ui/List";
 import RaisedButton from "material-ui/RaisedButton";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
+
 export class FormUserDetails extends Component {
   continue = (e) => {
     e.preventDefault();
     // Proccess Form to API
+    // this.props.handleSymptomsChange(selectedSypmtoms);
     this.props.nextStep();
   };
   back = (e) => {
@@ -39,9 +41,10 @@ export class FormUserDetails extends Component {
         rash,
         vomiting,
         diarrehea,
+        symptoms
       },
     } = this.props;
-
+    
     return (
       <MuiThemeProvider>
         <>

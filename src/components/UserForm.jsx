@@ -55,6 +55,10 @@ export class UserForm extends Component {
     this.setState({ [input]: e });
   };
 
+  handleSypmtomsChange = (sypmtoms) => {
+    this.setState({sypmtoms});
+  }
+
   render() {
     const { step } = this.state;
     const {
@@ -139,6 +143,7 @@ export class UserForm extends Component {
           <Confirm
             prevStep={this.prevStep}
             nextStep={this.nextStep}
+            handleSymptomsChange={this.handleSypmtomsChange}
             values={values}
           />
         );
