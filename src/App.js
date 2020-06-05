@@ -87,7 +87,7 @@ function App() {
               height: "100%",
             }}
           >
-            <Router history={history} basename={process.env.PUBLIC_URL}>
+            <Router basename={process.env.PUBLIC_URL}>
               <Switch>
                 <Route exact path={'/'} component={Home} />
                 <Footer>
