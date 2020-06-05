@@ -4,6 +4,8 @@ import FormPersonalDetails from "./FormPersonalDetails";
 import Confirm from "./Confirm";
 import Success from "./Success";
 import FormSymptoms from "./FormSymptoms";
+
+import TestResult from "../services/TestResult";
 export class UserForm extends Component {
   state = {
     step: 1,
@@ -56,6 +58,7 @@ export class UserForm extends Component {
   };
 
   render() {
+    console.log(TestResult());
     const { step } = this.state;
     const {
       firstName,
