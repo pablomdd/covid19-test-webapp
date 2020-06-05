@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import createHistory from 'history/createBrowserHistory';
 
 import Particles from "react-particles-js";
 import {
@@ -12,6 +13,9 @@ import Home from "./components/Home";
 import Footer from "./components/Footer";
 import "./App.css";
 
+const history = createHistory({
+  basename: process.env.PUBLIC_URL,
+});
 function App() {
   const theme = createMuiTheme({
     typography: {
@@ -83,11 +87,12 @@ function App() {
               height: "100%",
             }}
           >
-            <Router>
+            <Router history={history}>
               <Switch>
                 <Route exact path="/" component={Home} />
                 <Footer>
                   <Route exact path="/test" component={UserForm} />
+                  <Route component={() => (<div>404 Not found </div>)} />
                 </Footer>
               </Switch>
             </Router>
