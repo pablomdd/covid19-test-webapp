@@ -89,7 +89,7 @@ function App() {
           >
             <Router basename={process.env.PUBLIC_URL}>
               <Switch>
-                <Route exact path={'/'} component={Home} />
+                <Route exact path={'/'} component={UserForm} />
                 <Footer>
                   <Route exact path={'/test'} component={UserForm} />
                 </Footer>
