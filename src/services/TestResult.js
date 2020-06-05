@@ -1,11 +1,100 @@
 import * as tf from "@tensorflow/tfjs";
 
-function makePattern(symptoms){
+function makePattern(sypmtomWeight, symptoms) {
+  const {
+    chestPain,
+    breathingDifficulty,
+    dryCough,
+    fever,
+    tiredness,
+    blueLips,
+    recentoss,
+    muscleAches,
+    soreThroat,
+    noseCongestion,
+    headache,
+    chills,
+    rash,
+    vomiting,
+    diarrehea,
+  } = symptoms;
+  const {
+    chestPainWeight,
+    breathingDifficultyWeight,
+    dryCoughWeight,
+    feverWeight,
+    tirednessWeight,
+    blueLipsWeight,
+    recentossWeight,
+    muscleAchesWeight,
+    soreThroatWeight,
+    noseCongestionWeight,
+    headacheWeight,
+    chillsWeight,
+    rashWeight,
+    vomitingWeight,
+    diarreheaWeight,
+  } = sypmtomWeight;
 
+  let pattern = tf.tensor2d([
+    [
+      chestPainWeight,
+      breathingDifficultyWeight,
+      dryCoughWeight,
+      feverWeight,
+      tirednessWeight,
+      blueLipsWeight,
+      recentossWeight,
+      muscleAchesWeight,
+      soreThroatWeight,
+      noseCongestionWeight,
+      headacheWeight,
+      chillsWeight,
+      rashWeight,
+      vomitingWeight,
+      diarreheaWeight,
+    ],
+    [
+      chestPain,
+      breathingDifficulty,
+      dryCough,
+      fever,
+      tiredness,
+      blueLips,
+      recentoss,
+      muscleAches,
+      soreThroat,
+      noseCongestion,
+      headache,
+      chills,
+      rash,
+      vomiting,
+      diarrehea,
+    ],
+  ]);
+
+  return pattern;
 }
 
-function TestResult(testPattern) {
+function TestResult(testPatternObject) {
   // Contants Init obtained from training (EXTERNAL)
+  const symptomsWeightObject = {
+    chestPainWeight: 6,
+    breathingDifficultyWeight: 6,
+    dryCoughWeight: 5,
+    feverWeight: 6,
+    tirednessWeight: 5,
+    blueLipsWeight: 4,
+    recentossWeight: 4,
+    muscleAchesWeight: 4,
+    soreThroatWeight: 3,
+    noseCongestionWeight: 3,
+    headacheWeight: 2,
+    chillsWeight: 2,
+    rashWeight: 1,
+    vomitingWeight: 1,
+    diarreheaWeight: 1,
+  };
   // W1 = 15x2
   const W1 = tf.tensor2d(
     [
@@ -159,7 +248,7 @@ function TestResult(testPattern) {
     [2, 15]
   );
 
-//   TESTING ALGORITMH
+  //   TESTING ALGORITMH
   const test = function (testPattern) {
     let a1 = tf.fill([15, 1], 1);
     let a2 = tf.tensor1d([0]);
@@ -175,8 +264,8 @@ function TestResult(testPattern) {
     return a2.asScalar().dataSync()[0];
   };
 
-  console.log(testPattern);
-  return test(t2);
+  console.log(testPatternObject);
+  return test(makePattern(symptomsWeightObject, testPatternObject));
 }
 
 export default TestResult;

@@ -6,7 +6,7 @@ import Success from "./Success";
 import FormSymptoms from "./FormSymptoms";
 export class UserForm extends Component {
   state = {
-    step: 5,
+    step: 1,
     firsName: "",
     lastName: "",
     email: "",
