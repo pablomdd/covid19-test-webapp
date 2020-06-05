@@ -52,7 +52,7 @@ export class UserForm extends Component {
 
   handleSliderChange = (input, e) => {
     console.log(`${input}: ${e}`);
-    this.setState({ [input]: e });
+    this.setState({ [input]: parseInt(e) });
   };
 
   handleSypmtomsChange = (sypmtoms) => {
