@@ -89,9 +89,9 @@ function App() {
           >
             <Router history={history}>
               <Switch>
-                <Route exact path="/" component={Home} />
+                <Route exact path={process.env.PUBLIC_URL + '/'} component={Home} />
                 <Footer>
-                  <Route exact path="/test" component={UserForm} />
+                  <Route exact path={process.env.PUBLIC_URL + '/test'} component={UserForm} />
                   <Route component={() => (<div>404 Not found </div>)} />
                 </Footer>
               </Switch>
