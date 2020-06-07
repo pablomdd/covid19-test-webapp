@@ -87,18 +87,18 @@ function App() {
               height: "100%",
             }}
           >
-          <Footer>
+            {/* <Footer>
             <UserForm/>
-          </Footer>
-            {/* <Router basename={process.env.PUBLIC_URL}>
-                <Footer>
+          </Footer> */}
+            <Router basename={process.env.PUBLIC_URL}>
               <Switch>
-                  <Route exact path={"/"} component={UserForm} />
+                <Route exact path={"/"} component={Home} />
+                <Footer>
                   <Route exact path={"/test"} component={UserForm} />
                 </Footer>
                 <Route component={() => <div>404 Not found </div>} />
               </Switch>
-            </Router> */}
+            </Router>
           </div>
         </div>
       </ThemeProvider>
