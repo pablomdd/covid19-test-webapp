@@ -1,4 +1,4 @@
-This is a COVID-19 test powered by Machine Learning to give a diagnosis.
+This is a COVID-19 test powered by Machine Learning to give a reliable diagnosis.
 
 ## About
 This was the final project for the Neurofuzzy Systems Class (2020-2) at IPN UPIITA.
