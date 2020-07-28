@@ -7,6 +7,12 @@ This repository is a web app built with [ReactJS](https://reactjs.org/) that rel
 
 The machine learning algorithm was originally developed in MATLAB and can be found in [this other repository](https://github.com/pablomdd/covid_test_ml). There you will find the methodology and further medical references.
 
+## Demo
+https://pablomdd.github.io/covid19-test-webapp/
+
+## More
+Watch presentation and guided demo (in English) on YouTube: https://youtu.be/0k3ZehmD9GM
+
 ## Disclaimer
 We do not intend replacing a doctor nor a physical test, we are giving to the users a suggestion to go to a hospital or to stay in home, based on their symptoms.
 
